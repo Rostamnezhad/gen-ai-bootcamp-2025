@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="c4-context" name="System Context">
+    <mxGraphModel dx="1100" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="student" value="&lt;b&gt;Student&lt;/b&gt;&lt;div&gt;[Person]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Learns German between instructor-led classes&lt;/div&gt;" style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" vertex="1" parent="1">
+          <mxGeometry x="120" y="40" width="200" height="180" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="teacher" value="&lt;b&gt;Teacher&lt;/b&gt;&lt;div&gt;[Person]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Manages vocabulary and checks student progress&lt;/div&gt;" style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" vertex="1" parent="1">
+          <mxGeometry x="680" y="40" width="200" height="180" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="portal" value="&lt;b&gt;German Learning Portal&lt;/b&gt;&lt;div&gt;[Software System]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Vocabulary inventory, learning record store and launchpad for AI learning apps&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#0D5091;metaEdit=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="340" width="300" height="130" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="llm" value="&lt;b&gt;LLM API&lt;/b&gt;&lt;div&gt;[External System]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Generates exercises, hints and feedback&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="620" width="240" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="speech" value="&lt;b&gt;Speech Service&lt;/b&gt;&lt;div&gt;[External System]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Text-to-speech and speech recognition (ASR)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="620" width="240" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="youtube" value="&lt;b&gt;YouTube&lt;/b&gt;&lt;div&gt;[External System]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Source of German listening practice videos&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="620" width="240" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" value="Practices German,&lt;br&gt;takes study activities" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;endSize=14;rounded=0;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="student" target="portal">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e2" value="Manages vocabulary,&lt;br&gt;views progress" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;endSize=14;rounded=0;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="teacher" target="portal">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e3" value="Sends prompts,&lt;br&gt;gets exercises and feedback" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;endSize=14;rounded=0;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="portal" target="llm">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e4" value="Sends text/audio,&lt;br&gt;gets speech/text" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;endSize=14;rounded=0;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="portal" target="speech">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e5" value="Pulls listening&lt;br&gt;transcripts" style="endArrow=blockThin;html=1;fontSize=11;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;endSize=14;rounded=0;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="portal" target="youtube">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="title" value="&lt;b&gt;German Learning Portal - System Context (C4 Level 1)&lt;/b&gt;" style="text;html=1;fontSize=16;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="780" width="600" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
